@@ -1,10 +1,10 @@
-import Solutions.Day1;
+import Solutions.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] input = FileReader.ReadFileLines(1);
+        String[] input = FileReader.ReadFileLines(2);
 
-        Day1.SolveOne(input);
-        Day1.SolveTwo(input);
+        Day2.SolveOne(input);
+        Day2.SolveTwo(input);
     }
 }

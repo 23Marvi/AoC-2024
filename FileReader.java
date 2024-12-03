@@ -25,12 +25,27 @@ public class FileReader {
         return lines;
     }
 
+    public static String ReadFile(int day) {
+        StringBuilder content = new StringBuilder();
+        try {
+            File file = GetFile(day);
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                content.append(scanner.nextLine()).append(System.lineSeparator());
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return content.toString().trim();
+    }
+
     private static File GetFile(int day) throws FileNotFoundException {
         if (day < _MinDay || day > _MaxDay) {
             throw new IllegalArgumentException("Day must be between" + _MinDay + " and " + _MaxDay);
         }
 
-        String fullPath = "Inputs/Day" + day;
+        String fullPath = "Inputs/Day" + day + ".txt";
 
         try {
             File file = new File(fullPath);

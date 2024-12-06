@@ -2,9 +2,9 @@ import Solutions.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] input = FileReader.ReadFileLines(5);
+        char[][] input = FileReader.ReadFileDoubleDimensionCharArray(6);
 
-        Day5.SolveOne(input);
-        Day5.SolveTwo(input);
+        Day6.SolveOne(input);
+        Day6.SolveTwo(input);
     }
 }

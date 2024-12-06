@@ -25,6 +25,15 @@ public class FileReader {
         return lines;
     }
 
+    public static char[][] ReadFileDoubleDimensionCharArray(int day) {
+        String[] lines = ReadFileLines(day);
+        char[][] doubleDimension = new char[lines.length][];
+        for (int i = 0; i < lines.length; i++) {
+            doubleDimension[i] = lines[i].toCharArray();
+        }
+        return doubleDimension;
+    }
+
     public static String ReadFile(int day) {
         StringBuilder content = new StringBuilder();
         try {

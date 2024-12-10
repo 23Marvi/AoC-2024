@@ -34,6 +34,18 @@ public class FileReader {
         return doubleDimension;
     }
 
+    public static int[][] ReadFileDoubleDimensionIntArray(int day) {
+        String[] lines = ReadFileLines(day);
+        int[][] doubleDimension = new int[lines.length][];
+        for (int i = 0; i < lines.length; i++) {
+            doubleDimension[i] = new int[lines[i].length()];
+            for (int j = 0; j < lines[i].length(); j++) {
+                doubleDimension[i][j] = Integer.parseInt(String.valueOf(lines[i].charAt(j)));
+            }
+        }
+        return doubleDimension;
+    }
+
     public static String ReadFile(int day) {
         StringBuilder content = new StringBuilder();
         try {
